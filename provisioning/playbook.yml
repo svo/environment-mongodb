@@ -1,9 +1,0 @@
----
-- hosts: all
-
-  tasks:
-
-    - include: mongodb.yml
-
-  handlers:
-
