@@ -13,14 +13,14 @@
     - run
 
   - name: Install MongoDB
-    apt: pkg=mongodb-10gen update_cache=yes
+    apt: pkg=mongodb-org update_cache=yes
     sudo: yes
     tags:
     - mongodb
     - run
   
   - name: Start MongoDB
-    service: name=mongodb state=started
+    service: name=mongod state=started
     sudo: yes
     tags:
     - mongodb
