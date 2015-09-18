@@ -20,7 +20,7 @@
     - run
   
   - name: Start MongoDB
-    service: name=mongod state=started
+    service: name=mongod state=restarted
     sudo: yes
     tags:
     - mongodb
