@@ -20,8 +20,11 @@
     - run
 
   - name: Increase allowed namespace size for mongodb
-    lineinfile: dest=/etc/mongod.conf regexp='\# nssize \= \<size\>' line='nssize = 255'
+    lineinfile: dest=/etc/mongod.conf regexp="{{ item.regexp }}" line="{{ item.line }}"
     sudo: yes
+    with_items:
+    - {regexp: '\# nssize \= \<size\>', line: 'nssize = 255' }
+    - {regexp: 'bind_ip = 127.0.0.1', line: 'bind_ip = 0.0.0.0' }
     tags:
     - mongodb
     - run
