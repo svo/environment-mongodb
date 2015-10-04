@@ -24,7 +24,7 @@
     sudo: yes
     with_items:
     - {regexp: '\# nssize \= \<size\>', line: 'nssize = 255' }
-    - {regexp: 'bind_ip = 127.0.0.1', line: 'bind_ip = 0.0.0.0' }
+    - {regexp: '^bind_ip = 127.0.0.1', line: '#bind_ip = 127.0.0.1' }
     tags:
     - mongodb
     - run
